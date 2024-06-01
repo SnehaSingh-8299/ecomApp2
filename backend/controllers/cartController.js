@@ -6,6 +6,7 @@ exports.addToCart = async (req, res) => {
     try {
         const product = await Product.findById(req.body.productId);
         let cart = await Cart.findById(req.body.cartId);
+        console.log(cart, "carttttt addd")
         if (!cart) {
             cart = new Cart({ products: [], totalPrice: 0 });
         }
